@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>材料库列表页</title>
+    <style>
+        *{margin: 0;padding: 0}
+        .logo{
+            background: #1ABEBF url("images/logo.png")no-repeat center center;
+            height: 70px;
+        }
+        .header{
+            background: rgba(128, 128, 128, 0.22);    
+        }
+        .container{
+            height:40px;
+            width:1000px;
+            text-align:center;
+            line-height: 40px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .start{
+            float: left;
+            overflow:hidden;
+            }
+        .end{
+            float: right;
+            overflow:hidden;
+            }
+        .container a{
+            margin-right:60px;
+            text-decoration: none;
+            font-size: 20px;
+            color:#333;
+            }
+            .start>.icon{
+                display: block;
+                width:19px;
+                height:19px;
+                background:url(images/location.png);
+                position:absolute;
+                top:50%;
+                margin-top:-10px;
+            }
+            .start>.first{
+                margin-left:30px;
+                }
+            .start,.end{
+                position:relative;
+                }
+            .end>.icon{
+            top:50%;
+            margin-top:-10px;
+            position:absolute;
+            width:19px;
+            height:19px;
+            background:url(images/adm.png)
+            }
+            .end>.adm{
+            padding-left:20px;
+            }
+            .start,.end{
+                font-size: 12px;
+                cursor:pointer
+                }  
+                .nav{                   
+                   height: 60px;
+                    background: white;
+                    padding-top: 15px;                   
+                }
+                .menu{
+                    width: 1000px;
+                    height: 60px;
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+                .menu a{
+                    float: left;
+                    text-decoration: none;
+                    color: #5d5d5d;
+                    text-align: center;
+                    display: block;
+                    width: auto;
+                    font-size: 20px;
+                    line-height: 40px;
+                }
+                .number{
+                    background: white;
+                    
+                }
+                .tab{
+                    height: 170px;
+                    width: 1000px;
+                    background: #ebebeb;
+                    margin-left: auto;
+                    margin-right: auto;
+                    padding: 1px; 
+                    margin-bottom: 20px;                                                                  
+                }
+                .one,.two,.three{
+                    width:1000px;
+                    height: 25px;
+                    margin-left: auto;
+                    margin-right: auto;                   
+                }               
+                .tab ul{
+                    float:left;
+                    width:100%;
+                    padding-top:15px;                   
+                    margin:0;
+                    list-style-type:none;                                                   
+                }
+                .tab ul>li{
+                    overflow: auto;
+                    float: left;
+                    border: 1px solid transparent;
+                }
+                .tab ul>li:hover{
+                    border: 1px solid orange;
+                }
+                .tab a{
+                    float:left;              
+                    width:4em;
+                    text-decoration:none;
+                    text-align: center;
+                    font-size: 18px;
+                    color: #5d5d5d;                   
+                }
+                .tab a:hover{
+                    background-color: white ;                    
+                }
+                .A a{
+                    color:#1ABEBF;
+                }
+            .parent{
+                box-sizing: border-box;
+            }
+            .parent-one{
+            width:1000px;
+            /* height: 1200px; */
+            margin-left: auto;
+            margin-right: auto;
+            background:#ebebeb;
+            /* border: 0px solid black; */
+            }
+            /* .parent div{
+            float: left;
+            width:240px;
+            height:300px;
+            border:1px solid grey;            
+        } */
+
+        .child {
+            float: left;
+            width:240px;
+            height:345px;
+            padding: 15px;
+            /* border:1px solid grey; */
+            box-sizing: border-box;
+            margin-bottom: 15px;
+            border:1px solid #dfdfdf;
+        }
+
+        .child:not(:last-child) {
+            margin-right: 13.333px;
+        }
+        row::after {
+            display: block;
+            content: "";
+            clear: both;
+        }
+        .child:hover{
+            color:orange;
+            
+        }
+        h5{
+            color: #1ABEBF;
+           
+        }
+              
+        .page {
+            clear: both;
+            /* height: 50px; */
+            width: 1000px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 30px;          
+        }
+        .Y{
+            background: #dfdfdf;
+            width: 100px;
+            display: inline-block;
+            text-align: center;
+            margin-right: 50px;
+        }        
+        .page a{
+            display: inline-block;
+            text-decoration: none;
+            font-size: 20px;
+            color: black;
+            margin-right: 20px;
+        }
+        .page span {
+            font-size: 20px;
+            color: black;
+        }
+        .page a:hover{
+            color: orange;
+        }
+        .page input{
+            width:20px;
+        }
+        a.Q{
+            background: orange;
+            width: 70px;
+            text-align: center;
+            margin-left: 50px;
+        }
+        .weixin{           
+            width: 1000px;
+            font-size: 16px;
+            margin-left:auto;
+            margin-right: auto;
+            margin-bottom: 20px;
+        }
+        .weixin img{
+            float: left;
+            margin-right: 20px;
+        }
+        .J{
+            font-size: 20px;
+            color: #1ABEBF;
+        }
+        .footer{
+            background: #5d5d5d url("images/logo.png") no-repeat;
+            height: 120px;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="logo"></div>
+    <div class="header">
+            <div class="container">
+                <a href="#">首页</a>
+                <a href="#">咨询</a>
+                <a href="#">测评</a>
+                <a href="#">商城</a>
+                <div class="start">
+                    <i class="icon"></i>
+                    <span class="text first">深圳</span>
+                    <span class="text">切换</span>
+                </div>
+                <div class="end">
+                    <span class="icon"></span>
+                    <span class="adm">个人中心</span>
+                </div>
+            </div>
+    </div>
+            <div class="nav">
+            <div class="menu">
+                    <a href="#">首页&nbsp;</a>
+                    <a href="#">&nbsp;>&nbsp;</a>
+                    <a href="#">&nbsp;预防装修污染&nbsp;</a>
+                    <a href="#">&nbsp;>&nbsp;</a>
+                    <a href="#">&nbsp;材料库</a>                
+            </div>
+            </div>
+            <div class="number">
+            <div class="tab">
+                <div class="one">
+                        <ul>
+                            
+                            <li class="A"><a href="#">类别</a></li>
+                            
+                            <li><a href="#">全部</a></li>
+                            <li><a href="#">地板</a></li>
+                            <li><a href="#">涂料</a></li>
+                            <li><a href="#">墙纸</a></li>
+                            <li><a href="#">瓷砖</a></li>
+                            <li><a href="#">粘胶剂</a></li>
+                            <li><a href="#">油漆</a></li>
+                            <li><a href="#">家具</a></li>
+                            <li><a href="#">板材</a></li>
+                            <li><a href="#">饰品</a></li>
+                            <img src="images/indexSelect.png">
+                        </ul>
+                </div>
+                <div class="two">
+                    <ul>
+                        <li class="A"><a href="#">类别</a></li>
+                        <li><a href="#">全部</a></li>
+                    </ul>
+                </div>
+                <div class="three">
+                        <ul>
+                        <li class="A"><a href="#">类别</a></li>
+                        <li><a href="#">全部</a></li>
+                        <li><a href="#">实木</a></li>
+                        <li><a href="#">复合</a></li>
+                        <li><a href="#">强化</a></li>
+                        <li><a href="#">其他</a></li>
+                        </ul>
+                </div>
+                <div class="four">
+                        <ul>
+                        <li class="A"><a href="#">类别</a></li>
+                        <li><a href="#">全部</a></li>
+                        <li><a href="#">大自然</a></li>
+                        <li><a href="#">生活家</a></li>
+                        <li><a href="#">北美枫情</a></li>
+                        <li><a href="#">德尔</a></li>
+                        <li><a href="#">博典</a></li>
+                        <li><a href="#">船王</a></li>   
+                        </ul>                    
+                </div>
+            </div>
+            <div class="parent row">     
+                <div class="parent-one row">
+                    <div class="child">
+                        <img src="images/data_image.png" alt="">
+                        <p>德尔&nbsp;&nbsp;都市系列3001</p>
+                        <p>木地板&nbsp;-&nbsp;复合地板</p>
+                        <p>单价：128元/m^2</p>
+                        <h5>环保评级:&nbsp;B&nbsp;(可以使用)</h5>
+                    </div>
+                    <div class="child">
+                        <img src="images/data_image.png" alt="">
+                        <p>德尔&nbsp;&nbsp;都市系列3001</p>
+                        <p>木地板&nbsp;-&nbsp;复合地板</p>
+                        <p>单价：128元/m^2</p>
+                        <h5>环保评级:&nbsp;B&nbsp;(可以使用)</h5>
+                    </div>
+                    <div class="child"><img src="images/data_image.png" alt="">
+                        <p>德尔&nbsp;&nbsp;都市系列3001</p>
+                        <p>木地板&nbsp;-&nbsp;复合地板</p>
+                        <p>单价：128元/m^2</p>
+                        <h5>环保评级:&nbsp;B&nbsp;(可以使用)</h5>
+                    </div>
+                    <div class="child">
+                        <img src="images/data_image.png" alt="">
+                        <p>德尔&nbsp;&nbsp;都市系列3001</p>
+                        <p>木地板&nbsp;-&nbsp;复合地板</p>
+                        <p>单价：128元/m^2</p>
+                        <h5>环保评级:&nbsp;B&nbsp;(可以使用)</h5>
+                    </div>
+                </div>
+                <div class="parent-one row">
+                        <div class="child">
+                            <img src="images/data_image.png" alt="">
+                            <p>德尔&nbsp;&nbsp;都市系列3001</p>
+                            <p>木地板&nbsp;-&nbsp;复合地板</p>
+                            <p>单价：128元/m^2</p>
+                            <h5>环保评级:&nbsp;B&nbsp;(可以使用)</h5>
+                        </div>
+                        <div class="child">
+                            <img src="images/data_image.png" alt="">
+                            <p>德尔&nbsp;&nbsp;都市系列3001</p>
+                            <p>木地板&nbsp;-&nbsp;复合地板</p>
+                            <p>单价：128元/m^2</p>
+                            <h5>环保评级:&nbsp;B&nbsp;(可以使用)</h5>
+                        </div>
+                        <div class="child"><img src="images/data_image.png" alt="">
+                            <p>德尔&nbsp;&nbsp;都市系列3001</p>
+                            <p>木地板&nbsp;-&nbsp;复合地板</p>
+                            <p>单价：128元/m^2</p>
+                            <h5>环保评级:&nbsp;B&nbsp;(可以使用)</h5>
+                        </div>
+                        <div class="child">
+                            <img src="images/data_image.png" alt="">
+                            <p>德尔&nbsp;&nbsp;都市系列3001</p>
+                            <p>木地板&nbsp;-&nbsp;复合地板</p>
+                            <p>单价：128元/m^2</p>
+                            <h5>环保评级:&nbsp;B&nbsp;(可以使用)</h5>
+                        </div>
+                    </div>
+                
+     </div>
+    </div>
+    <div class="page">
+        <div turn-page>
+            <a href="#" class="Y">上一页</a>
+            <a href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#" class="Y">下一页</a>
+            <span>共有十页,去第<input type="text">页</span>
+            <a class="Q">确定</a>      
+        </div>
+    </div>
+    <div class="weixin">
+        <img src="images/small_weixin.png" alt="">
+        <p class="J">建材检测&nbsp;需求反馈</p><br>
+        <p>亲爱的用户，我们正在不断的完善和更新建材库，<br>如没有你没有你想要的信息，请将您想测得建材告诉我们。</p>
+    </div>
+    <div class="footer"></div>
+</body>
+</html>
